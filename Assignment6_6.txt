@@ -1,0 +1,57 @@
+1.Explain the difference between FIFO and Capacity scheduler
+
+	* The FIFO scheduler places the application in a queue and process them in the order of submission ie First-In-First-Out basis.
+
+	* In FIFO if the old job is long the short jobs get stuck behind the long ones
+
+	* THe FIFO scheduling doen not deals with priority or the size of the job.
+
+	* It is simple and easy to understand and need not configure aything but its not suitable for shared clusters.
+
+	* In FIFO there is poor utilization of the job queue and it has costly data replication.
+
+	* On shared cluster, it is recommended to use the capacity scheduler or fair scheduler.
+
+	* In capacity scheduling each queue is assigned a capacity.
+
+        * These capacity of individual queue is added together to find the overall capacity of the cluster.
+
+	*  Unlike FIFO ,here the shortest job are assigned first followed by the longest one.
+
+	* If the queues are not designed or used properly some queues may be overloaded while some may be underutilised.
+
+	* This is the cost of overall cluster utilization since the capacity of the queue is reserved for jobs in that queue.
+
+
+
+-------------------------------------------------------------------------------------------------------------
+
+
+2.What are the limitations of hadoop 1.x and how they were overcome in hadoop 2.x
+
+	- Limitations of hadoop 1.x:
+	
+		* MapReduce component which supports only MApReduce-based Batct/Data Processing Applications.
+
+		* only one namenode is used. If the name node fails the entire cluster fails and this is called Single POint of failure(SPOF) in hadoop
+
+		* It does not supports horizontal scalability.
+
+		* Hadoop 1.x is not suitable for real time data processing.
+
+		* It does not supports multi-tenancy support
+
+		
+	- Hadoop 2.x overcomes:
+
+		* Hadoop 2.x supports horizontal scalability.
+
+		* Multi-tenancy is supported.
+
+		* It provides high availability
+
+		* By decoupling component's responsibilities, it supports multiple namespace.
+
+		* Haddop 2.x uses new YARN component
+
+		* It has resource manager component, node manager component and application master component which makes it more useful.
